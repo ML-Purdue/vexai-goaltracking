@@ -3,39 +3,47 @@
     <grip:ImageFile>
       <property name="path" value="/home/nicholas/Downloads/IMG_7055.jpg"/>
     </grip:ImageFile>
+    <grip:ImageFile>
+      <property name="path" value="/home/nicholas/Downloads/red_goal_from_video.png"/>
+    </grip:ImageFile>
   </sources>
   <steps>
-    <grip:Step name="Blur">
+    <grip:Step name="HSV Threshold">
       <grip:Input step="0" socket="0"/>
       <grip:Input step="0" socket="1">
-        <value>BOX</value>
+        <value>
+          <double>0.0</double>
+          <double>180.0</double>
+        </value>
       </grip:Input>
       <grip:Input step="0" socket="2">
-        <value>28.82882882882883</value>
+        <value>
+          <double>135.29676258992808</double>
+          <double>255.0</double>
+        </value>
+      </grip:Input>
+      <grip:Input step="0" socket="3">
+        <value>
+          <double>110.07194244604318</double>
+          <double>255.0</double>
+        </value>
       </grip:Input>
       <grip:Output step="0" socket="0" previewed="true"/>
     </grip:Step>
-    <grip:Step name="HSV Threshold">
+    <grip:Step name="Blur">
       <grip:Input step="1" socket="0"/>
       <grip:Input step="1" socket="1">
-        <value>
-          <double>0.2554855952135098</double>
-          <double>13.57009027819041</double>
-        </value>
+        <value>BOX</value>
       </grip:Input>
       <grip:Input step="1" socket="2">
-        <value>
-          <double>73.38129496402877</double>
-          <double>203.04753820033955</double>
-        </value>
-      </grip:Input>
-      <grip:Input step="1" socket="3">
-        <value>
-          <double>114.65827338129496</double>
-          <double>252.83531409168083</double>
-        </value>
+        <value>50.45045045045045</value>
       </grip:Input>
       <grip:Output step="1" socket="0" previewed="true"/>
+    </grip:Step>
+    <grip:Step name="Mask">
+      <grip:Input step="2" socket="0"/>
+      <grip:Input step="2" socket="1"/>
+      <grip:Output step="2" socket="0" previewed="true"/>
     </grip:Step>
   </steps>
   <connections>
@@ -44,8 +52,16 @@
       <grip:Input step="1" socket="0"/>
     </grip:Connection>
     <grip:Connection>
-      <grip:Output source="0" socket="0" previewed="true"/>
+      <grip:Output source="1" socket="0" previewed="false"/>
       <grip:Input step="0" socket="0"/>
+    </grip:Connection>
+    <grip:Connection>
+      <grip:Output step="1" socket="0" previewed="true"/>
+      <grip:Input step="2" socket="1"/>
+    </grip:Connection>
+    <grip:Connection>
+      <grip:Output source="1" socket="0" previewed="false"/>
+      <grip:Input step="2" socket="0"/>
     </grip:Connection>
   </connections>
   <settings>
@@ -58,10 +74,10 @@
     <deployJvmOptions>-Xmx50m -XX:-OmitStackTraceInFastThrow -XX:+HeapDumpOnOutOfMemoryError -XX:MaxNewSize=16m</deployJvmOptions>
   </settings>
   <codeGenerationSettings>
-    <language>Java</language>
-    <className>GripPipeline</className>
+    <language>Python</language>
+    <className>RedFilter</className>
     <implementWpilibPipeline>false</implementWpilibPipeline>
-    <saveDir>/home/nicholas/GRIP</saveDir>
+    <saveDir>/home/nicholas/Downloads</saveDir>
     <packageName></packageName>
     <moduleName>grip</moduleName>
   </codeGenerationSettings>
