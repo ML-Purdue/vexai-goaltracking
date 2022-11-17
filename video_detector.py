@@ -9,7 +9,7 @@ from grip.RedFilter import RedFilter
 red_detector = RedFilter()
 blue_detector = BlueFilter()
 model = torch.hub.load('ultralytics/yolov5', 'custom', path='11-10-22.pt', force_reload=True)
-model.cpu()
+model.cuda()
 
 def main():
   model_input = sys.argv[1]
@@ -31,6 +31,7 @@ def main():
       frame = cv2.bitwise_or(detect_red(frame), detect_blue(frame))
     
     pred = model(frame)
+    print(pred.pandas().xyxy[0])
     for row in pred.pandas().xyxy[0].iterrows():
       pt1 = (int(row[1]["xmin"]), int(row[1]["ymin"]))
       pt2 = (int(row[1]["xmax"]), int(row[1]["ymax"]))
