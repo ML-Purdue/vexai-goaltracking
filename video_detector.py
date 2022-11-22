@@ -1,14 +1,14 @@
-import torch
 import cv2
 import sys
 import os
 import numpy as np
 from grip.BlueFilter import BlueFilter
 from grip.RedFilter import RedFilter
+import torch
 
 red_detector = RedFilter()
 blue_detector = BlueFilter()
-model = torch.hub.load('ultralytics/yolov5', 'custom', path='11-10-22.pt', force_reload=True)
+model = torch.hub.load('ultralytics/yolov5', 'custom', path='11-10-22.pt')
 model.cuda()
 
 def main():
