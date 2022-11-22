@@ -12,15 +12,15 @@ class BlueFilter:
         """initializes all values to presets or None if need to be set
         """
 
-        self.__hsv_threshold_hue = [100.0, 150.0]
-        self.__hsv_threshold_saturation = [170, 255.0]
-        self.__hsv_threshold_value = [48.0, 255.0]
+        self.__hsv_threshold_hue = [101, 150]
+        self.__hsv_threshold_saturation = [43, 218]
+        self.__hsv_threshold_value = [55, 181]
 
         self.hsv_threshold_output = None
 
         self.__blur_input = self.hsv_threshold_output
         self.__blur_type = BlurType.Box_Blur
-        self.__blur_radius = 30
+        self.__blur_radius = 28.82882882882883
 
         self.blur_output = None
 

@@ -1,7 +1,7 @@
 <grip:Pipeline>
   <sources>
     <grip:ImageFile>
-      <property name="path" value="/home/nicholas/Downloads/blue_goal.jpg"/>
+      <property name="path" value="C:\Users\beake\Downloads\blue_goal_from_video.png"/>
     </grip:ImageFile>
   </sources>
   <steps>
@@ -9,20 +9,20 @@
       <grip:Input step="0" socket="0"/>
       <grip:Input step="0" socket="1">
         <value>
-          <double>108.45323741007195</double>
-          <double>114.29541595925298</double>
+          <double>101.97841726618705</double>
+          <double>149.28327645051195</double>
         </value>
       </grip:Input>
       <grip:Input step="0" socket="2">
         <value>
-          <double>121.53776978417265</double>
-          <double>255.0</double>
+          <double>43.57014388489208</double>
+          <double>218.01194539249144</double>
         </value>
       </grip:Input>
       <grip:Input step="0" socket="3">
         <value>
-          <double>48.156474820143885</double>
-          <double>196.553480475382</double>
+          <double>55.03597122302158</double>
+          <double>181.02389078498294</double>
         </value>
       </grip:Input>
       <grip:Output step="0" socket="0" previewed="true"/>
@@ -33,7 +33,7 @@
         <value>BOX</value>
       </grip:Input>
       <grip:Input step="1" socket="2">
-        <value>24.324324324324326</value>
+        <value>28.82882882882883</value>
       </grip:Input>
       <grip:Output step="1" socket="0" previewed="true"/>
     </grip:Step>
@@ -45,20 +45,20 @@
   </steps>
   <connections>
     <grip:Connection>
-      <grip:Output source="0" socket="0" previewed="true"/>
-      <grip:Input step="0" socket="0"/>
+      <grip:Output source="0" socket="0" previewed="false"/>
+      <grip:Input step="2" socket="0"/>
     </grip:Connection>
     <grip:Connection>
-      <grip:Output step="0" socket="0" previewed="true"/>
-      <grip:Input step="1" socket="0"/>
+      <grip:Output source="0" socket="0" previewed="false"/>
+      <grip:Input step="0" socket="0"/>
     </grip:Connection>
     <grip:Connection>
       <grip:Output step="1" socket="0" previewed="true"/>
       <grip:Input step="2" socket="1"/>
     </grip:Connection>
     <grip:Connection>
-      <grip:Output source="0" socket="0" previewed="true"/>
-      <grip:Input step="2" socket="0"/>
+      <grip:Output step="0" socket="0" previewed="true"/>
+      <grip:Input step="1" socket="0"/>
     </grip:Connection>
   </connections>
   <settings>
@@ -74,7 +74,7 @@
     <language>Python</language>
     <className>BlueFilter</className>
     <implementWpilibPipeline>false</implementWpilibPipeline>
-    <saveDir>/home/nicholas/Documents/vexai/vexai-goaltracking/grip</saveDir>
+    <saveDir>C:\Users\beake\Downloads</saveDir>
     <packageName></packageName>
     <moduleName>bluefilter</moduleName>
   </codeGenerationSettings>
