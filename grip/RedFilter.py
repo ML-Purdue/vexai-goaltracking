@@ -20,7 +20,7 @@ class RedFilter:
 
         self.__blur_input = self.hsv_threshold_output
         self.__blur_type = BlurType.Box_Blur
-        self.__blur_radius = 15
+        self.__blur_radius = 30
 
         self.blur_output = None
 
