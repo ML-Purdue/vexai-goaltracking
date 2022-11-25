@@ -32,7 +32,9 @@ def main():
         inference = pred.pandas().xyxy[0]
         x_mid = (inference.xmin[0] + inference.xmax[0]) / 2 
         y_mid = (inference.ymin[0] + inference.ymax[0]) / 2
-        print([x_mid, y_mid])
+        name = inference.name[0]
+        dist = depth.get_distance(x_mid, y_mid)
+        print("Name: {} Midpoint: {} Dist: {}".format(name, [x_mid, y_mid], dist))
   finally:
     pipeline.stop()
 
