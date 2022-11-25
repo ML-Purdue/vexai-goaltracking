@@ -1,0 +1,7 @@
+torch --extra-index-url https://download.pytorch.org/whl/cu117
+torchvision --extra-index-url https://download.pytorch.org/whl/cu117
+torchaudio --extra-index-url https://download.pytorch.org/whl/cu117
+pandas
+opencv-pythonclear
+numpy
+pyrealsense2
